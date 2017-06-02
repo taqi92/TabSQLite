@@ -58,7 +58,7 @@ public class Employee implements Parcelable {
     @Override
     public String toString() {
         return "Employee [id=" + id + ", name=" + name + ", age="
-                + age + ", longitude=" + longitude +"  latitude=" + latitude + "]";
+                + age + ", longitude=" + longitude + ",  latitude=" + latitude + "]";
     }
     @Override
     public int hashCode() {

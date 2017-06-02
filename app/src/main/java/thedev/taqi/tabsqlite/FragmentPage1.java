@@ -16,12 +16,8 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
-//import com.notarazi.myviewpagertablayout1.R;
-//import com.notarazi.myviewpagertablayout1.db.EmployeeDAO;
-//import com.notarazi.myviewpagertablayout1.model.Employee;
 import thedev.taqi.tabsqlite.db.*;
 import thedev.taqi.tabsqlite.model.Employee;
 
@@ -63,7 +59,7 @@ public class FragmentPage1 extends Fragment implements OnClickListener {
         return rootView;
     }
     private void setListeners() {
-        empLatEtxt.setOnClickListener(this);
+        //empLatEtxt.setOnClickListener(this);
 //        Calendar newCalendar = Calendar.getInstance();
 //        datePickerDialog = new DatePickerDialog(getActivity(),
 //                new OnDateSetListener() {
@@ -84,6 +80,7 @@ public class FragmentPage1 extends Fragment implements OnClickListener {
         empNameEtxt.setText("");
         empAgeEtxt.setText("");
         empLatEtxt.setText("");
+        empLonEtxt.setText("");
     }
     private void setEmployee() {
         employee = new Employee();
@@ -119,9 +116,10 @@ public class FragmentPage1 extends Fragment implements OnClickListener {
     }
     @Override
     public void onClick(View view) {
-        if (view == empLatEtxt) {
+        //if (view == empLatEtxt) {
             //datePickerDialog.show();
-        } else if (view == addButton) {
+        //}
+         if (view == addButton) {
             setEmployee();
             task = new AddEmpTask(getActivity());
             task.execute((Void) null);
@@ -144,7 +142,7 @@ public class FragmentPage1 extends Fragment implements OnClickListener {
             if (activityWeakRef.get() != null
                     && !activityWeakRef.get().isFinishing()) {
                 if (result != -1)
-                    Toast.makeText(activityWeakRef.get(), "Employee Saved",
+                    Toast.makeText(activityWeakRef.get(), "Data Saved",
                             Toast.LENGTH_LONG).show();
             }
         }

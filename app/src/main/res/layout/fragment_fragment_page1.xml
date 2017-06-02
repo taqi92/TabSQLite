@@ -6,6 +6,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="5dp" >
+
+
+
         <EditText
             android:id="@+id/etxt_name"
             android:layout_width="wrap_content"
@@ -16,10 +19,12 @@
             android:singleLine="true" />
         <EditText
             android:id="@+id/etxt_age"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/etxt_name"
             android:hint="@string/age"
+
             android:nextFocusDown="@+id/etxt_lat"
             android:singleLine="true" />
         <EditText
@@ -59,5 +64,7 @@
                 android:layout_weight="1"
                 android:text="@string/reset" />
         </LinearLayout>
+
+
     </RelativeLayout>
 </ScrollView>

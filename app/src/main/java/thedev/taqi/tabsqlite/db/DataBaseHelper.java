@@ -8,13 +8,14 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public static final String EMPLOYEE_TABLE = "employee";
     public static final String ID_COLUMN = "id";
     public static final String NAME_COLUMN = "name";
-    public static final String EMPLOYEE_AGE = "age";
+    public static final String AGE = "age";
     public static final String LATITUDE = "latitude";
     public static final String LONGITUDE = "Longitude";
+
     public static final String CREATE_EMPLOYEE_TABLE = "CREATE TABLE "
             + EMPLOYEE_TABLE + "(" + ID_COLUMN + " INTEGER PRIMARY KEY, "
-            + NAME_COLUMN + " TEXT, " + EMPLOYEE_AGE + " INT, " + LATITUDE + " DOUBLE, "
-            + LONGITUDE + " DATE" + ")";
+            + NAME_COLUMN + " TEXT, " + AGE + " INT, " + LATITUDE + " DOUBLE, "
+            + LONGITUDE + " DOUBLE" + ")";
     private static DataBaseHelper instance;
     public static synchronized DataBaseHelper getHelper(Context context) {
         if (instance == null)
@@ -32,6 +33,10 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_EMPLOYEE_TABLE);
     }
+
+
+
+
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
     }

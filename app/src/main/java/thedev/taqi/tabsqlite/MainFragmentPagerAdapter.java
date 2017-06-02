@@ -9,7 +9,7 @@ import thedev.taqi.tabsqlite.FragmentPage1;
 
 public class MainFragmentPagerAdapter extends FragmentPagerAdapter {
     final int PAGE_COUNT = 3;
-    private String tabTitles[] = new String[] { "REPORT", "UPDATE", "NEWS" };
+    private String tabTitles[] = new String[] { "Entry", "Result", "Location" };
     private Context context;
     public MainFragmentPagerAdapter(FragmentManager fm, Context context) {
         super(fm);

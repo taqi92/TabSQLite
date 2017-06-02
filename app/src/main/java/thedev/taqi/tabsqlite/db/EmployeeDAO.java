@@ -22,7 +22,7 @@ public class EmployeeDAO extends EmployeeDBDAO {
     public long save(Employee employee) {
         ContentValues values = new ContentValues();
         values.put(DataBaseHelper.NAME_COLUMN, employee.getName());
-        values.put(DataBaseHelper.EMPLOYEE_AGE,employee.getAge());
+        values.put(DataBaseHelper.AGE,employee.getAge());
         values.put(DataBaseHelper.LATITUDE, employee.getLat());
         values.put(DataBaseHelper.LONGITUDE, employee.getLon());
 
@@ -35,7 +35,7 @@ public class EmployeeDAO extends EmployeeDBDAO {
         Cursor cursor = database.query(DataBaseHelper.EMPLOYEE_TABLE,
                 new String[] { DataBaseHelper.ID_COLUMN,
                         DataBaseHelper.NAME_COLUMN,
-                        DataBaseHelper.EMPLOYEE_AGE,
+                        DataBaseHelper.AGE,
                         DataBaseHelper.LATITUDE,
                         DataBaseHelper.LONGITUDE}, null, null, null,null,
                 null, null);
@@ -50,9 +50,9 @@ public class EmployeeDAO extends EmployeeDBDAO {
 //            } catch (java.text.ParseException e) {
 //                e.printStackTrace();
 //            }
-            employee.setAge(cursor.getInt(100));
-            employee.setLat(cursor.getDouble(9));
-            employee.setLon(cursor.getDouble(9));
+            employee.setAge(cursor.getInt(2));
+            employee.setLat(cursor.getDouble(3));
+            employee.setLon(cursor.getDouble(4));
             employees.add(employee);
         }
         return employees;
